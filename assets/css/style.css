@@ -834,12 +834,18 @@ a {
   .hero {
     min-height: 0;
     aspect-ratio: 16 / 9;
+    overflow: hidden;
   }
 
   .hero__title {
-    font-size: clamp(30px, 9.5vw, 42px);
-    line-height: 1.05;
-    margin-bottom: var(--spacing-16);
+    font-size: clamp(24px, 8.5vw, 38px);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-12);
+  }
+
+  .hero__panel .eyebrow {
+    margin-bottom: var(--spacing-8);
+    font-size: var(--text-caption);
   }
 
   .hero__actions {
@@ -850,5 +856,9 @@ a {
   .hero__actions .btn {
     padding: 12px 20px;
     font-size: var(--text-body-sm);
+    white-space: nowrap;
+    background: rgba(244, 243, 231, 0.92);
+    color: var(--color-espresso);
+    border-color: var(--color-espresso);
   }
 }
