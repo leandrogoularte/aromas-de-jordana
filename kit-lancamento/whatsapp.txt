@@ -1,0 +1,76 @@
+WHATSAPP DO ATENDIMENTO — AROMAS DE JORDANA
+============================================
+Configure tudo no app WhatsApp Business (é grátis).
+
+1) SAUDAÇÃO AUTOMÁTICA (mensagem quando chega um novo contato)
+
+"Olá! Aqui é a Aromas de Jordana 🕯
+Obrigada pelo contato. Fazemos velas artesanais: decorativas, aromáticas,
+em gel, imagens sagradas e lembrancinhas personalizadas para batizados,
+casamentos e comunhão.
+
+Me conta duas coisas rapidinho:
+1. Você está procurando vela para uso próprio ou para presentear/evento?
+2. Tem alguma cor, aroma ou imagem específica em mente?
+
+Assim eu te mostro as melhores opções. 💛"
+
+2) MENSAGEM FORA DO HORÁRIO (quando mandam fora do atendimento)
+
+"Olá! Recebemos sua mensagem 🕯
+Nosso atendimento é de [HORARIO] (exceto [DIAS]).
+Vamos responder em breve. Enquanto isso, você já pode ver os produtos em
+aromasdejordana.com.br — e eu devolvo assim que puder. Obrigada pela
+paciência!"
+
+3) ROTEIRO DE ATENDIMENTO (como conduzir cada pedido)
+
+Passo 1 — Entender o pedido:
+"Que ótimo! Quer a vela de [produto]. É para você, para presentear ou
+para algum evento?
+
+Passo 2 — Personalização (se houver):
+"Podemos personalizar com [imagem/nome/data/aroma]. Que tal [sugestão]?"
+
+Passo 3 — Fechar:
+"Ficou assim:
+- Produto: ...
+- Personalização: ...
+- Quantidade: ...
+- Valor: R$ ...
+- Prazo: entregue até [data]
+
+Posso confirmar o pedido?"
+
+Passo 4 — Pagamento e envio:
+"Perfeito! Para confirmar, o pagamento pode ser por [pix/ted/em mãos].
+Assim que confirmar, acordo o prazo de produção e te envio o código de
+rastreio quando despachar."
+
+Passo 5 — Após a entrega (cativo + indicação):
+"Oi! Tudo certo com a sua vela? 🕯
+Se puder, deixar uma avaliação no nosso perfil [IG/Google] muda tudo para
+a gente. E se conhecer alguém que vá precisar, é só indicar: temos um
+mimo para quem indica. 💛"
+
+4) TRANSMISSÃO PARA DATAS (envie pela lista de transmissão, nunca em grupo)
+Troque [DATA] e [PRAZO]. Envie 1x, 20 a 30 dias antes.
+
+- Nossa Senhora Aparecida (set/out):
+"Olá! Em outubro celebramos Nossa Senhora Aparecida 🕯
+Estamos com agenda de encomendas para o dia 12/10. Quer garantir a sua
+vela/lembrancinha personalizada? Me chama até [DATA LIMITE PRA ENCOMENDA]."
+
+- Batizados/casamentos (verão):
+"Tem batizado ou casamento vindo aí? Definimos lembrancinhas
+personalizadas em até [PRAZO]. Consulte sua data e garanta a sua —
+agenda de [MES] está abrindo! 💛"
+
+- Dia das Mães (abril):
+"👩 Nada como presentear com o que é feito à mão. As velas da Aromas de
+Jordana viram um presente único. Garanta a sua até [DATA LIMITE]."
+
+5) STATUS DO WHATSAPP (1x por dia)
+- Publique 1 foto de produto + 1 linha curta ("Hoje produzindo [produto]
+— encomendas pelo link do WhatsApp").
+- Status é o anúncio grátis que aparece para todos os seus contatos.

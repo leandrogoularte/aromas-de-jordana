@@ -1,0 +1,31 @@
+KIT DE LANÇAMENTO — AROMAS DE JORDANA
+Pasta: kit-lancamento/
+
+O QUE TEM AQUI
+- google-perfil.txt ........ texto pronto para o Google Perfil da Empresa
+- instagram.txt ............ bio + roteiro de posts + hashtags
+- whatsapp.txt ............. mensagens automáticas e roteiro de atendimento
+- qrimg-whatsapp.png ....... QR para etiqueta da embalagem (leva ao WhatsApp)
+- qrimg-instagram.png ...... QR para etiqueta da embalagem (leva ao Instagram)
+
+IMPORTANTE
+Troque onde aparecer [CIDADE], [REGIAO], [HORARIO] pelas suas informações
+reais. Use o WhatsApp Business (baixe o app) para ativar as mensagens
+automáticas descritas em whatsapp.txt.
+
+USO RÁPIDO DO QR NAS ETIQUETAS
+1. Abra qrimg-whatsapp.png em qualquer visualizador de imagem.
+2. Imprima em etiqueta adesiva quadrada de 2,5 a 4 cm (gráfica ou
+   impressora caseira com papel adesivo).
+3. Cole na parte de trás da embalagem de cada vela.
+4. O QR leva o cliente direto ao seu WhatsApp com a mensagem "Oi! Quero
+   fazer um pedido na Aromas de Jordana." já escrita.
+5. Use o qrimg-instagram.png se preferir levar para as redes sociais.
+
+Cada vela entregue vira uma nova chance de contato. Este é o passo de
+maior retorno e custo quase zero.
+
+ATENÇÃO AO PUBLICAR NO HOSTGATOR
+Esta pasta (kit-lancamento/) é só para o seu uso pessoal — NÃO suba ela
+para o servidor. Baixe os QR Codes e os textos no seu computador/celular
+e publique apenas a raiz do site (index.html, assets/ e admin/).
