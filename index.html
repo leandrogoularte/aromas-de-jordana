@@ -63,46 +63,13 @@
           <p class="section__intro">Decoração, fé e perfume em peças únicas, produzidas à mão com todo cuidado.</p>
         </div>
 
-        <div class="grid-products">
+        <nav class="catalog-tabs" id="catalog-tabs" aria-label="Filtrar por categoria"></nav>
 
-          <article class="product-card">
-            <div class="product-card__image-wrap">
-              <span class="badge">Artesanal</span>
-              <img loading="lazy" class="product-card__image" id="gal-nossa-senhora" src="assets/img/vela-nossa-senhora.webp" alt="Vela decorativa de Nossa Senhora Aparecida" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__name">Vela Decorativa Nossa Senhora Aparecida</h3>
-              <p class="product-card__desc">Vela decorativa inspirada em Nossa Senhora Aparecida, perfeita para presentear, decorar e celebrar a fé.</p>
-              <p class="product-card__price">R$ 69,90</p>
-              <a class="ghost-link" href="#contato">Tenho interesse <span class="arrow">→</span></a>
-            </div>
-          </article>
+        <div class="grid-products" id="catalog-grid"></div>
 
-          <article class="product-card">
-            <div class="product-card__image-wrap">
-              <span class="badge">Artesanal</span>
-              <img loading="lazy" class="product-card__image" id="gal-sao-miguel" src="assets/img/vela-sao-miguel-gel.webp" alt="Vela de São Miguel Arcanjo em gel azul" />
-            </div>
-            <div class="thumbs">
-              <button class="thumb is-active" type="button" data-gallery="gal-sao-miguel" data-src="assets/img/vela-sao-miguel-gel.webp" aria-label="Vela de São Miguel Arcanjo em gel azul">
-                <img loading="lazy" src="assets/img/vela-sao-miguel-gel.webp" alt="" />
-              </button>
-              <button class="thumb" type="button" data-gallery="gal-sao-miguel" data-src="assets/img/vela-sao-miguel-personalizada.webp" aria-label="Vela personalizada de São Miguel">
-                <img loading="lazy" src="assets/img/vela-sao-miguel-personalizada.webp" alt="" />
-              </button>
-              <button class="thumb" type="button" data-gallery="gal-sao-miguel" data-src="assets/img/vela-sao-miguel-fe.webp" aria-label="Vela São Miguel, fé que perfuma">
-                <img loading="lazy" src="assets/img/vela-sao-miguel-fe.webp" alt="" />
-              </button>
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__name">Velas de São Miguel Arcanjo</h3>
-              <p class="product-card__desc">Em gel azul, personalizada ou com perfume de fé — escolha a sua versão favorita de São Miguel.</p>
-              <p class="product-card__price">R$ 69,90</p>
-              <a class="ghost-link" href="#personalizacao">Como personalizar <span class="arrow">→</span></a>
-            </div>
-          </article>
-
-        </div>
+        <p class="catalog-empty" id="catalog-empty" hidden>
+          Nenhuma vela nesta categoria ainda. Em breve teremos novidades — e se quiser algo sob medida, fale conosco pelo WhatsApp.
+        </p>
       </div>
     </section>
 
@@ -288,6 +255,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/produtos.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
