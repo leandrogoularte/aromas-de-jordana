@@ -4,6 +4,19 @@
 
 var PRODUTOS_DEFAULT = [
   {
+    id: 'lembrancinhas-de-batismo',
+    nome: 'Lembrancinhas de Batismo',
+    descricao: 'Pequenas lembrancinhas personalizadas para o batizado — produzidas à mão, com nome, data ou imagem sacra. Emoção para seus convidados.',
+    preco: 0,
+    categoria: 'lembrancinhas',
+    imagens: [
+      { src: 'assets/img/lembra-01.webp', alt: 'Lembrancinha de batismo artesanal' },
+      { src: 'assets/img/lembra-02.webp', alt: 'Lembrancinhas de batismo personalizadas' }
+    ],
+    ctaTexto: 'Tenho interesse',
+    ctaHref: '#contato'
+  },
+  {
     id: 'nossa-senhora',
     nome: 'Vela Decorativa Nossa Senhora Aparecida',
     descricao: 'Vela decorativa inspirada em Nossa Senhora Aparecida, perfeita para presentear, decorar e celebrar a fé.',
@@ -97,6 +110,9 @@ function carregarProdutos(callback) {
 }
 
 function formatarPreco(valor) {
+  if (!(valor > 0)) {
+    return 'Preço sob consulta';
+  }
   return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 

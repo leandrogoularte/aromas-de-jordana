@@ -156,8 +156,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($nome === '') {
             $erro = 'Escreva o nome do produto.';
-        } elseif ($preco <= 0) {
-            $erro = 'Escreva o preço do produto (ex.: 69,90).';
+        } elseif (admin_post('preco') !== '' && $preco <= 0) {
+            $erro = 'O preço está incorreto (use vírgula, ex.: 69,90) ou deixe em branco para "sob consulta".';
         } else {
             $imagens = array();
             if ($existente) {
@@ -310,8 +310,8 @@ if ($acao === 'editar' && !$editar) {
       <label for="descricao">Descrição</label>
       <textarea id="descricao" name="descricao" placeholder="Explique o produto de um jeito carinhoso — olhe os outros produtos para se inspirar."><?php echo admin_html($val['descricao']); ?></textarea>
 
-      <label for="preco">Preço</label>
-      <input id="preco" name="preco" type="text" inputmode="decimal" value="<?php echo admin_html($val['preco'] !== '' ? number_format((float)$val['preco'], 2, ',', '') : ''); ?>" placeholder="Ex.: 69,90" />
+      <label for="preco">Preço (deixe em branco para "sob consulta")</label>
+      <input id="preco" name="preco" type="text" inputmode="decimal" value="<?php echo admin_html((float)$val['preco'] > 0 ? number_format((float)$val['preco'], 2, ',', '') : ''); ?>" placeholder="Ex.: 69,90" />
 
       <label>Categoria</label>
       <div class="categorias">
@@ -356,7 +356,7 @@ if ($acao === 'editar' && !$editar) {
         <?php if ($capa) { ?><img src="../<?php echo admin_html($capa); ?>" alt="" /><?php } ?>
         <div class="info">
           <h2><?php echo admin_html($p['nome']); ?></h2>
-          <p><?php echo admin_html(admin_categoria_label(isset($p['categoria']) ? $p['categoria'] : 'sagradas')); ?> · R$ <?php echo admin_html(number_format((float)$p['preco'], 2, ',', '')); ?></p>
+          <p><?php echo admin_html(admin_categoria_label(isset($p['categoria']) ? $p['categoria'] : 'sagradas')); ?> · <?php echo (float)$p['preco'] > 0 ? 'R$ ' . admin_html(number_format((float)$p['preco'], 2, ',', '')) : 'Preço sob consulta'; ?></p>
         </div>
         <div class="acoes">
           <a href="index.php?acao=editar&amp;id=<?php echo admin_html($p['id']); ?>">Editar</a>
