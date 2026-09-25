@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aromas de Jordana — Velas artesanais, decorativas e aromáticas</title>
+  <meta name="description" content="Velas artesanais, aromáticas, decorativas e em gel feitas à mão pela Aromas de Jordana. Fé, perfume e decoração para o seu ambiente." />
+  <link rel="icon" type="image/png" href="assets/img/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,400;0,500&family=Space+Grotesk:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== Navigation ===================== -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__logo">
+        <img class="nav__logo-img" src="assets/img/logo.webp" alt="Logo Aromas de Jordana" />
+        <span class="nav__logo-name">Aromas de Jordana</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#velas">Velas</a></li>
+        <li><a href="#personalizacao">Personalização</a></li>
+        <li><a href="#lembrancinhas">Lembrancinhas</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li class="nav__cta"><a class="btn btn-outline" href="#velas">Ver velas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" id="inicio">
+      <img class="hero__bg" src="assets/img/fundo-1.webp" alt="Vela de São Miguel Arcanjo em gel azul" />
+      <div class="container">
+        <div class="hero__panel">
+          <span class="eyebrow">Feito à mão, com fé</span>
+          <h1 class="hero__title">Aromas que <strong>aconchegam</strong> e iluminam</h1>
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="#velas">Conhecer as velas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Products ===================== -->
+    <section class="section" id="velas">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Nosso catálogo</span>
+          <h2 class="section__title">Velas artesanais para cada momento</h2>
+          <p class="section__intro">Decoração, fé e perfume em peças únicas, produzidas à mão com todo cuidado.</p>
+        </div>
+
+        <div class="grid-products">
+
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <span class="badge">Artesanal</span>
+              <img loading="lazy" class="product-card__image" id="gal-nossa-senhora" src="assets/img/vela-nossa-senhora.webp" alt="Vela decorativa de Nossa Senhora Aparecida" />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Vela Decorativa Nossa Senhora Aparecida</h3>
+              <p class="product-card__desc">Vela decorativa inspirada em Nossa Senhora Aparecida, perfeita para presentear, decorar e celebrar a fé.</p>
+              <p class="product-card__price">R$ 69,90</p>
+              <a class="ghost-link" href="#contato">Tenho interesse <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <span class="badge">Artesanal</span>
+              <img loading="lazy" class="product-card__image" id="gal-sao-miguel" src="assets/img/vela-sao-miguel-gel.webp" alt="Vela de São Miguel Arcanjo em gel azul" />
+            </div>
+            <div class="thumbs">
+              <button class="thumb is-active" type="button" data-gallery="gal-sao-miguel" data-src="assets/img/vela-sao-miguel-gel.webp" aria-label="Vela de São Miguel Arcanjo em gel azul">
+                <img loading="lazy" src="assets/img/vela-sao-miguel-gel.webp" alt="" />
+              </button>
+              <button class="thumb" type="button" data-gallery="gal-sao-miguel" data-src="assets/img/vela-sao-miguel-personalizada.webp" aria-label="Vela personalizada de São Miguel">
+                <img loading="lazy" src="assets/img/vela-sao-miguel-personalizada.webp" alt="" />
+              </button>
+              <button class="thumb" type="button" data-gallery="gal-sao-miguel" data-src="assets/img/vela-sao-miguel-fe.webp" aria-label="Vela São Miguel, fé que perfuma">
+                <img loading="lazy" src="assets/img/vela-sao-miguel-fe.webp" alt="" />
+              </button>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Velas de São Miguel Arcanjo</h3>
+              <p class="product-card__desc">Em gel azul, personalizada ou com perfume de fé — escolha a sua versão favorita de São Miguel.</p>
+              <p class="product-card__price">R$ 69,90</p>
+              <a class="ghost-link" href="#personalizacao">Como personalizar <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Personalização ===================== -->
+    <section class="custom" id="personalizacao">
+      <img loading="lazy" class="custom__bg" src="assets/img/fundo.webp" alt="" aria-hidden="true" />
+      <div class="container custom__content">
+        <div class="custom__panel">
+          <span class="eyebrow">Personalização</span>
+          <h2 class="section__title">Sua vela, do seu jeito</h2>
+          <p>Trabalhamos com velas personalizadas e tags — imagens de papel circular que acompanham cada vela.</p>
+
+          <div class="split__sub">
+            <h3>Velas personalizadas</h3>
+            <p>Escolha a imagem, a cor e o aroma. Cada peça é produzida à mão para o seu momento.</p>
+          </div>
+
+          <div class="split__sub">
+            <h3>Tags circulares</h3>
+            <p>Etiquetas de papel circular que vêm junto com a vela, com nome, data, frase ou imagem sagrada.</p>
+          </div>
+
+          <a class="btn btn-primary u-mt-24" href="#contato">Pedir uma personalização</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Lembrancinhas ===================== -->
+    <section class="section section--sand" id="lembrancinhas">
+      <div class="container split">
+        <div class="split__text">
+          <span class="eyebrow">Lembrancinhas</span>
+          <h2 class="section__title">Pequenas velas para grandes momentos</h2>
+          <p>Trabalhamos com pequenas velas para lembrancinhas, produzidas à mão para emocionar seus convidados.</p>
+
+          <div class="section__list">
+            <span>Casamento</span>
+            <span>Batizado</span>
+            <span>Formatura</span>
+            <span>Primeira Comunhão</span>
+          </div>
+
+          <a class="btn btn-primary u-mt-24" href="#contato">Pedir orçamento</a>
+        </div>
+        <div class="split__media">
+          <img loading="lazy" src="assets/img/lembr.webp" alt="Velas pequenas para lembrancinhas" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="section section--sage" id="sobre">
+      <div class="container split">
+        <div class="split__text">
+          <span class="eyebrow">Sobre nós</span>
+          <h2 class="section__title">Cuidado artesanal em cada vela</h2>
+
+          <div class="split__sub">
+            <h3>Produção artesanal</h3>
+            <p>Cada peça é feita à mão, com capricho nos detalhes, na escolha dos materiais e no acabamento.</p>
+          </div>
+
+          <div class="split__sub">
+            <h3>Fé e decoração</h3>
+            <p>Velas aromáticas, decorativas e em gel que unem espiritualidade, presentes e decoração para o seu lar.</p>
+          </div>
+
+          <a class="btn btn-primary u-mt-24" href="#velas">Explorar catálogo</a>
+        </div>
+        <div class="split__media">
+          <img loading="lazy" src="assets/img/vela-sao-miguel-personalizada.webp" alt="Vela personalizada de São Miguel" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__brand-name">Aromas de Jordana</div>
+          <p>Velas artesanais que perfumam, decoram e carregam fé. Feitas à mão, com amor.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#velas">Velas</a></li>
+            <li><a href="#personalizacao">Personalização</a></li>
+            <li><a href="#lembrancinhas">Lembrancinhas</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="mailto:contato@aromasdejordana.com">E-mail</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        &copy; <span id="year"></span> Aromas de Jordana. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
