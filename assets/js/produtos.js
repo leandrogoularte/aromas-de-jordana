@@ -41,22 +41,38 @@ var CATEGORIAS = [
   { id: 'lembrancinhas', rotulo: 'Lembrancinhas' }
 ];
 
+function esc(texto) {
+  return String(texto == null ? '' : texto)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function caminhoSeguro(src) {
+  src = String(src || '');
+  if (/^assets\//i.test(src)) return src;
+  if (/^data:image\//i.test(src)) return src;
+  return '';
+}
+
 function normalizarProduto(p) {
   return {
-    id: p.id || 'produto-' + Math.random().toString(36).slice(2, 8),
-    nome: String(p.nome || 'Produto'),
-    descricao: String(p.descricao || ''),
+    id: esc(p.id ? p.id : 'produto-' + Math.random().toString(36).slice(2, 8)),
+    nome: esc(p.nome || 'Produto'),
+    descricao: esc(p.descricao || ''),
     preco: Number(p.preco) || 0,
-    categoria: String(p.categoria || 'sagradas'),
+    categoria: esc(p.categoria || 'sagradas'),
     imagens: Array.isArray(p.imagens) && p.imagens.length
       ? p.imagens.map(function (img) {
-          return typeof img === 'string'
-            ? { src: img, alt: String(p.nome || '') }
-            : { src: String(img.src || ''), alt: String(img.alt || p.nome || '') };
-        })
+          var src = typeof img === 'string' ? img : (img && img.src);
+          var alt = typeof img === 'string' ? String(p.nome || '') : String((img && img.alt) || p.nome || '');
+          return { src: caminhoSeguro(src), alt: esc(alt) };
+        }).filter(function (img) { return img.src !== ''; })
       : [],
-    ctaTexto: String(p.ctaTexto || 'Tenho interesse'),
-    ctaHref: String(p.ctaHref || '#contato')
+    ctaTexto: esc(p.ctaTexto || 'Tenho interesse'),
+    ctaHref: /^#/.test(String(p.ctaHref || '')) ? esc(p.ctaHref) : esc('#contato')
   };
 }
 

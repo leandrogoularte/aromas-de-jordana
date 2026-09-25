@@ -1,14 +1,31 @@
 <?php
 /* Aromas de Jordana — configuração do painel de administração */
+
+ini_set('session.use_strict_mode', '1');
 if (session_status() === PHP_SESSION_NONE) {
+    $seguro = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+    session_set_cookie_params(array(
+        'lifetime' => 0,
+        'path' => '/',
+        'secure' => $seguro,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ));
+    session_name('aromas_admin');
     session_start();
 }
+
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: no-referrer');
 
 define('ADMIN_PASS_FILE', __DIR__ . '/.passwd');
 define('ADMIN_DATA_FILE', dirname(__DIR__) . '/assets/data/produtos.json');
 define('ADMIN_UPLOAD_DIR', dirname(__DIR__) . '/assets/img/produtos/');
 define('ADMIN_UPLOAD_URL', 'assets/img/produtos/');
 define('ADMIN_SESSION_KEY', 'aromas_admin_ok');
+define('ADMIN_MAX_TRY', 6);
+define('ADMIN_LOCK_MIN', 15);
 
 function admin_is_authed() {
     return isset($_SESSION[ADMIN_SESSION_KEY]) && $_SESSION[ADMIN_SESSION_KEY] === true;
@@ -24,6 +41,23 @@ function admin_has_csrf() {
 
 function admin_html($texto) {
     return htmlspecialchars((string)$texto, ENT_QUOTES, 'UTF-8');
+}
+
+function admin_login_lock_time() {
+    return isset($_SESSION['admin_lock_until']) ? (int)$_SESSION['admin_lock_until'] : 0;
+}
+
+function admin_register_fail() {
+    $_SESSION['admin_fails'] = (isset($_SESSION['admin_fails']) ? (int)$_SESSION['admin_fails'] : 0) + 1;
+    if ($_SESSION['admin_fails'] >= ADMIN_MAX_TRY) {
+        $_SESSION['admin_lock_until'] = time() + ADMIN_LOCK_MIN * 60;
+        $_SESSION['admin_fails'] = 0;
+    }
+}
+
+function admin_reset_fails() {
+    unset($_SESSION['admin_fails']);
+    unset($_SESSION['admin_lock_until']);
 }
 
 function admin_redirect($url) {
@@ -82,7 +116,11 @@ function admin_ext_ok($ext) {
 
 function admin_salvar_imagem($tmp, $nome_original, $nome) {
     $info = @getimagesize($tmp);
-    $mime = $info ? $info['mime'] : '';
+    if ($info === false || $info[0] > 8000 || $info[1] > 8000) {
+        @unlink($tmp);
+        return '';
+    }
+    $mime = $info['mime'];
     $ext = strtolower(pathinfo((string)$nome_original, PATHINFO_EXTENSION));
     if (!admin_ext_ok($ext)) {
         $ext = 'jpg';
@@ -153,6 +191,9 @@ function admin_process_uploads() {
         );
     }
     $n = count($files['name']);
+    if ($n > 8) {
+        $n = 8;
+    }
     for ($i = 0; $i < $n; $i++) {
         if ($files['error'][$i] !== UPLOAD_ERR_OK) {
             continue;

@@ -1,0 +1,5 @@
+# Segurança: nunca versionar a senha do painel
+admin/.passwd
+
+# Fotos enviadas pelo painel (ficam só no HostGator)
+assets/img/produtos/

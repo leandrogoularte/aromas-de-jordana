@@ -13,8 +13,12 @@ $installado = file_exists(ADMIN_PASS_FILE);
 /* ---------- Primeiro acesso: criar senha ---------- */
 if (!$installado) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && admin_post('criar_senha') === '1') {
-        if (admin_post('nova_senha') === '') {
+        if (!admin_has_csrf()) {
+            $erro = 'Sessão expirada. Recarregue a página e tente de novo.';
+        } elseif (admin_post('nova_senha') === '') {
             $erro = 'Escreva uma senha para continuar.';
+        } elseif (strlen(admin_post('nova_senha')) < 6) {
+            $erro = 'A senha precisa ter pelo menos 6 caracteres.';
         } elseif (admin_post('nova_senha') !== admin_post('nova_senha2')) {
             $erro = 'As duas senhas não são iguais.';
         } else {
@@ -76,12 +80,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && admin_post('acao') === 'sair' && ad
 /* ---------- Login ---------- */
 if (!admin_is_authed()) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['senha'])) {
-        $hash = @file_get_contents(ADMIN_PASS_FILE);
-        if ($hash !== false && password_verify($_POST['senha'], trim($hash))) {
-            session_regenerate_id(true);
-            $_SESSION[ADMIN_SESSION_KEY] = true;
+        $bloqueado = admin_login_lock_time();
+        if ($bloqueado > time()) {
+            $erro = 'Muitas tentativas erradas. Aguarde alguns minutos e tente de novo.';
+        } elseif (!admin_has_csrf()) {
+            $erro = 'Sessão expirada. Recarregue a página e tente de novo.';
         } else {
-            $erro = 'Senha incorreta. Tente de novo.';
+            $hash = @file_get_contents(ADMIN_PASS_FILE);
+            if ($hash !== false && password_verify($_POST['senha'], trim($hash))) {
+                session_regenerate_id(true);
+                $_SESSION[ADMIN_SESSION_KEY] = true;
+                admin_reset_fails();
+            } else {
+                admin_register_fail();
+                $erro = 'Senha incorreta. Tente de novo.';
+            }
         }
     }
     if (!admin_is_authed()) {
