@@ -15,7 +15,7 @@
 :root {
   /* Cores */
   --color-deep-forest: #00473c;
-  --color-lime-glow: #e6ff55;
+  --color-lime-glow: #f5c518;
   --color-sage-mist: #d8e5d6;
   --color-warm-sand: #e8dcc6;
   --color-cream-canvas: #f4f3e7;
@@ -96,7 +96,7 @@
   --surface-cream-canvas: #f4f3e7;
   --surface-sage-mist-band: #d8e5d6;
   --surface-warm-sand-band: #e8dcc6;
-  --surface-lime-glow-highlight: #e6ff55;
+  --surface-lime-glow-highlight: #f5c518;
   --surface-deep-forest-surface: #00473c;
 }
 
