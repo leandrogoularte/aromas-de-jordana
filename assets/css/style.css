@@ -642,6 +642,46 @@ a {
 }
 
 /* ============================================================
+   Avaliações
+   ============================================================ */
+
+.grid-reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-40);
+}
+
+.review-card {
+  background: var(--color-sage-mist);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.review-card__stars {
+  color: var(--color-lime-glow);
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-shadow: 0 1px 1px rgba(14, 21, 14, 0.15);
+}
+
+.review-card__text {
+  font-style: italic;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-forest-shadow);
+}
+
+.review-card__author {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-body-sm);
+  letter-spacing: var(--tracking-body-sm);
+  color: var(--color-espresso);
+  margin-top: auto;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 
@@ -717,6 +757,11 @@ a {
 @media (max-width: 900px) {
   .grid-products {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-24);
+  }
+
+  .grid-reviews {
+    grid-template-columns: 1fr;
     gap: var(--spacing-24);
   }
 
