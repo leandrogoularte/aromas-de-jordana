@@ -514,8 +514,9 @@ a {
   position: absolute;
   top: var(--spacing-12);
   left: var(--spacing-12);
-  background: var(--color-lime-glow);
-  color: var(--color-forest-shadow);
+  background: var(--color-cream-canvas);
+  color: var(--color-espresso);
+  border: 2px solid var(--color-espresso);
   font-weight: var(--font-weight-bold);
   font-size: var(--text-caption);
   text-transform: uppercase;
