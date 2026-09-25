@@ -645,10 +645,34 @@ a {
    Avaliações
    ============================================================ */
 
-.grid-reviews {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.reviews-viewport {
+  overflow: hidden;
+}
+
+.reviews-track {
+  display: flex;
   gap: var(--spacing-40);
+  width: max-content;
+  animation: reviews-scroll 36s linear infinite;
+}
+
+.reviews-viewport:hover .reviews-track {
+  animation-play-state: paused;
+}
+
+@keyframes reviews-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track {
+    animation: none;
+  }
 }
 
 .review-card {
@@ -658,6 +682,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-16);
+  width: 360px;
+  flex: 0 0 auto;
 }
 
 .review-card__stars {
@@ -757,11 +783,6 @@ a {
 @media (max-width: 900px) {
   .grid-products {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-24);
-  }
-
-  .grid-reviews {
-    grid-template-columns: 1fr;
     gap: var(--spacing-24);
   }
 
