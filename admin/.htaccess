@@ -1,0 +1,4 @@
+# Protege a senha do painel contra acesso pela internet
+<FilesMatch "^\.passwd$">
+  Require all denied
+</FilesMatch>

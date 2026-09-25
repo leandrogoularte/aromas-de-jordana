@@ -1,0 +1,30 @@
+{
+  "produtos": [
+    {
+      "id": "nossa-senhora",
+      "nome": "Vela Decorativa Nossa Senhora Aparecida",
+      "descricao": "Vela decorativa inspirada em Nossa Senhora Aparecida, perfeita para presentear, decorar e celebrar a fé.",
+      "preco": 69.9,
+      "categoria": "sagradas",
+      "imagens": [
+        { "src": "assets/img/vela-nossa-senhora.webp", "alt": "Vela decorativa de Nossa Senhora Aparecida" }
+      ],
+      "ctaTexto": "Tenho interesse",
+      "ctaHref": "#contato"
+    },
+    {
+      "id": "sao-miguel",
+      "nome": "Velas de São Miguel Arcanjo",
+      "descricao": "Em gel azul, personalizada ou com perfume de fé — escolha a sua versão favorita de São Miguel.",
+      "preco": 69.9,
+      "categoria": "sagradas",
+      "imagens": [
+        { "src": "assets/img/vela-sao-miguel-gel.webp", "alt": "Vela de São Miguel Arcanjo em gel azul" },
+        { "src": "assets/img/vela-sao-miguel-personalizada.webp", "alt": "Vela personalizada de São Miguel" },
+        { "src": "assets/img/vela-sao-miguel-fe.webp", "alt": "Vela São Miguel, fé que perfuma" }
+      ],
+      "ctaTexto": "Como personalizar",
+      "ctaHref": "#personalizacao"
+    }
+  ]
+}

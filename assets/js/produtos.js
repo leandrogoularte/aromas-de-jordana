@@ -1,8 +1,8 @@
 /* Aromas de Jordana — dados da vitrine e render dinâmico
- * Adicione novos produtos aqui no array PRODUTOS, sem mexer no HTML.
- * Categorias disponíveis: sagradas, decorativas, lembrancinhas. */
+ * Os produtos vêm de assets/data/produtos.json (publicados pelo admin em /admin).
+ * Se o arquivo não carregar (ex.: computador sem rede), usa a lista padrão abaixo. */
 
-var PRODUTOS = [
+var PRODUTOS_DEFAULT = [
   {
     id: 'nossa-senhora',
     nome: 'Vela Decorativa Nossa Senhora Aparecida',
@@ -31,12 +31,54 @@ var PRODUTOS = [
   }
 ];
 
+var PRODUTOS = [];
+var PRODUTOS_PRONTOS = false;
+
 var CATEGORIAS = [
   { id: 'todas', rotulo: 'Todas' },
   { id: 'sagradas', rotulo: 'Sagradas' },
   { id: 'decorativas', rotulo: 'Decorativas' },
   { id: 'lembrancinhas', rotulo: 'Lembrancinhas' }
 ];
+
+function normalizarProduto(p) {
+  return {
+    id: p.id || 'produto-' + Math.random().toString(36).slice(2, 8),
+    nome: String(p.nome || 'Produto'),
+    descricao: String(p.descricao || ''),
+    preco: Number(p.preco) || 0,
+    categoria: String(p.categoria || 'sagradas'),
+    imagens: Array.isArray(p.imagens) && p.imagens.length
+      ? p.imagens.map(function (img) {
+          return typeof img === 'string'
+            ? { src: img, alt: String(p.nome || '') }
+            : { src: String(img.src || ''), alt: String(img.alt || p.nome || '') };
+        })
+      : [],
+    ctaTexto: String(p.ctaTexto || 'Tenho interesse'),
+    ctaHref: String(p.ctaHref || '#contato')
+  };
+}
+
+function carregarProdutos(callback) {
+  var url = 'assets/data/produtos.json?v=' + Date.now();
+  fetch(url, { cache: 'no-store' })
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (json) {
+      var lista = Array.isArray(json) ? json : (Array.isArray(json.produtos) ? json.produtos : []);
+      PRODUTOS = lista.map(normalizarProduto);
+      PRODUTOS_PRONTOS = true;
+      callback();
+    })
+    .catch(function () {
+      PRODUTOS = PRODUTOS_DEFAULT.map(normalizarProduto);
+      PRODUTOS_PRONTOS = true;
+      callback();
+    });
+}
 
 function formatarPreco(valor) {
   return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -118,8 +160,10 @@ function renderizarAbas() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  renderizarAbas();
-  renderizarProdutos('todas');
+  carregarProdutos(function () {
+    renderizarAbas();
+    renderizarProdutos('todas');
+  });
 
   var grid = document.getElementById('catalog-grid');
   grid.addEventListener('click', function (e) {
