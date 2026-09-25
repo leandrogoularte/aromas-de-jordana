@@ -831,12 +831,24 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero__title {
+    font-size: clamp(30px, 9.5vw, 42px);
+    line-height: 1.05;
+    margin-bottom: var(--spacing-16);
+  }
+
   .hero__actions {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
   }
 
   .hero__actions .btn {
-    width: 100%;
+    padding: 12px 20px;
+    font-size: var(--text-body-sm);
   }
 }
